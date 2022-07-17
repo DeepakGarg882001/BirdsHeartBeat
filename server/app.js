@@ -1,9 +1,11 @@
 const express = require("express");
 const dotENV = require("dotenv");
 const mongoose = require("mongoose");
+const https = require('https');
 
 const app = express();
 
+app.use(https);
 // Importing dotENV file
 dotENV.config({ path: "./config.env" });
 
