@@ -1,0 +1,24 @@
+
+.menu-canvas{
+    width:100vw;
+    height: fit-content;
+    padding: 7px 10px;
+    background-color: #07ad14;
+    padding-right: 30px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0px;
+}
+.menu-list-desk{
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content: right;
+    gap:20px;
+}
+.menu-list-option{
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    text-shadow: 1px 0px 3px black;
+}

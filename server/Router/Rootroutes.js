@@ -5,16 +5,29 @@ require("../DataBase/DB");
 module.exports=router;
 
 
-// ===== JOIN US Routes ======
-
+// ===== JOIN US Routes ====== //
 require("./join/approveUser");
 require("./join/joinusForm");
 
 
-
-// ===== USER ROUTE =====
-
+// ===== USER ROUTE ===== //
 require("./user/login");
 require("./user/signUp");
 
 
+// ===== DONATION ROUTE ====== //
+require("./donation/donation");
+require("./donation/paytmCallBack");
+
+
+// ===== Balance Status ==== //
+require("./balance/balanceStatus");
+
+
+// ===== Lists ===== //
+require("./lists/donationGainList");
+require("./lists/donationUtiliseList");
+
+
+// ==== Forms ====== //
+require("./forms/postWorkBill");

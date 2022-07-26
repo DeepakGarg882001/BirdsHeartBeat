@@ -31,13 +31,11 @@ router.post("/login", async (request,response)=>{
             }else{
 
            
-
             // Now Generate Token
             const data = {
                 id:isUserExists._id
             } 
             const Secure_Key = process.env.JWT_KEY;
-            console.log(data);
             const token = jwt.sign(data,Secure_Key);
 
             // Add token to DB
@@ -49,7 +47,8 @@ router.post("/login", async (request,response)=>{
             }else{
                 response.status(401).json({error:" Login Process failed !"});
             }
-         }
+
+          }
 
          }else{
             return response.status(401).json({error:"Invalid Credential !"});

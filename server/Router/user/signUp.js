@@ -43,8 +43,6 @@ router.post('/signup',async (request,response)=>{
         
     }
 
-
-
     
   } catch (error) {
     response.status(401).json({error});

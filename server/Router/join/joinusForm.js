@@ -31,10 +31,8 @@ router.post('/joinus', async(request, response)=>{
     }
 
 
-    
   } catch (error) {
     response.status(401).json({error});
   }
-
 
 });

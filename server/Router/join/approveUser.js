@@ -7,7 +7,6 @@ router.post("/join/approve", async (request, response)=>{
     console.log(request.body);
 
     try {
-
         const {email,action} = request.body;
  
         const findUser = await JoinUsCol.findOneAndUpdate({email},{selected:action});
@@ -17,8 +16,7 @@ router.post("/join/approve", async (request, response)=>{
         }else{
             response.status(401).json({error:" Process failed ! "});
         }
-         
-
+       
 
     } catch (error) {
         response.status(401).json({error});
