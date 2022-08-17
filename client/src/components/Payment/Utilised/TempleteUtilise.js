@@ -1,10 +1,11 @@
-import React,{useState} from 'react'
+import React from 'react'
 import "../../../styles/utiliseTemplate.css";
 
 import { Link } from 'react-router-dom';
 
 import { BiRupee } from "react-icons/bi";
 import AccordionUtilise from './AccordionUtilise';
+import { motion} from "framer-motion";
 
 
 const TempleteUtilise = ({data}) => {

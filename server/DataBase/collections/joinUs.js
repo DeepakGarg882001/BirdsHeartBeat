@@ -10,7 +10,7 @@ const JoinusDoc = new mongoose.Schema({
         type:String,
         required:true
     },
-    phone:{
+    age:{
         type:Number,
         required:true
     },
@@ -18,16 +18,28 @@ const JoinusDoc = new mongoose.Schema({
         type:String,
         required:true
     },
+    occupation:{
+    type:String,
+    required:true
+    },
     message:{
         type:String,
         required:true,
-        minLength:[50 ,"Please enter atleast 15 word !"]
+        minLength:[40 ,"Please enter atleast 15 word !"]
     },
     selected:{
         type:String,
         default:"none"
+    },
+    memberId:{
+        type:String,
+        default:"none"
+    },
+    memberName:{
+        type:String,
+        default:"none"
     }
-});
+},{timestamps:true});
 
 
 const JoinUsCol = mongoose.model("JOINUS",JoinusDoc);

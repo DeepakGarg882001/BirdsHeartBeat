@@ -4,6 +4,7 @@ import TempleteUtilise from '../Utilised/TempleteUtilise';
 
 import { useSelector,useDispatch } from 'react-redux';
 import NestUtiliseAction from '../../../redux/actions/NestUtiliseAction';
+import { motion} from "framer-motion";
 
 
 const NestPay = () => {

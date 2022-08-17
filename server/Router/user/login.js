@@ -17,33 +17,57 @@ router.post("/login", async (request,response)=>{
          }
         
          const isUserExists = await UserCol.findOne({email});
-         console.log(isUserExists);
 
          if(isUserExists){
               
             const checkPassword = await bcrypt.compare(password,isUserExists.password);
             
-            console.log(checkPassword);
 
             if(!checkPassword){
                 return response.status(401).json({error:"Invalid Credential !"});
             
             }else{
-
+                 
+             // Is Account Bolcked ?
+             if(isUserExists.userAccPlay.accPlay === "block"){
+                return response.status(200).json({error:"Your Account is Paused by Senior !"})
+             }
+             
            
             // Now Generate Token
             const data = {
                 id:isUserExists._id
             } 
-            const Secure_Key = process.env.JWT_KEY;
-            const token = jwt.sign(data,Secure_Key);
+            const member_Key = process.env.JWT_KEY_MEMBER;
+            const admin_Key = process.env.JWT_KEY_ADMIN;
+            const admin_1_Key = process.env.JWT_KEY_ADMIN_1;
+            
+            let token = "";
+            
+
+            if(isUserExists.userRole.role === "member"){
+               token = jwt.sign(data,member_Key);
+            }else{
+
+                if(isUserExists.userRole.role === "admin"){
+                    token = jwt.sign(data,admin_Key);
+    
+                }else{
+
+                    if(isUserExists.userRole.role === "admin_1"){
+                        token = jwt.sign(data,admin_1_Key);
+        
+                    }
+                } 
+            } 
+           
+            console.log(token);
 
             // Add token to DB
-            console.log(token);
             const addToken = await UserCol.findByIdAndUpdate(isUserExists._id , {token});
-            console.log(addToken);
+           
             if(addToken){
-                response.status(201).cookie("BHB_token",token).json({message:"You have Successfully LogedIn !"});
+                response.status(201).cookie("BHB_token",token).json({message:"You have Successfully LogedIn !",data:addToken});
             }else{
                 response.status(401).json({error:" Login Process failed !"});
             }

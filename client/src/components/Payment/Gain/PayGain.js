@@ -9,6 +9,7 @@ import { BiRupee } from "react-icons/bi";
 import { BsGraphUp } from "react-icons/bs";
 
 import DonationGainList from "./DonationGainList";
+import { motion} from "framer-motion";
 
 const PayGain = () => {
   const url = process.env.REACT_APP_URL;

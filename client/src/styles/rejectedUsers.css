@@ -1,0 +1,81 @@
+.rejected-canvas{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: white;
+    padding: 30px 0px;
+    justify-content: center;
+    align-items: center;
+    
+}
+.rejected-canvas-main-sec{
+    width: 70%;
+    
+}
+.rejected-user-table{
+    width: 100%;
+    text-align: left;
+}
+.rejected-user-table-headRow{
+    position: -webkit-sticky;
+    position: sticky;
+    top:38px;
+}
+.rejected-user-table-head{
+    font-weight: bold;
+    font-size: 1.4rem;
+    background-color: #2b3640;
+    color: white;
+    padding: 7px 20px;
+    min-width: fit-content;
+}
+.rejected-user-table-btn{
+    display: flex;
+    flex-direction: row;
+    min-width: fit-content;
+    gap: 3px;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: red;
+}
+.rejected-user-table-body-row{
+   padding: 10px 20px;
+   font-size: 1.1rem;
+   color: black;
+   font-weight: bold;
+   min-width: fit-content;
+}
+.rejected-canvas-no-user{
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: gray;
+}
+
+@media only screen and (max-width:1200px) {
+    .rejected-canvas-main-sec {
+        width: 90%;
+    }
+}
+
+
+@media only screen and (max-width:900px) {
+    .rejected-canvas-main-sec {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width:750px) {
+    .rejected-canvas-main-sec {
+       overflow: auto;
+       white-space: nowrap;
+       height: 78vh;
+    }
+    .rejected-user-table-headRow{
+        top:0px
+    }
+    
+}

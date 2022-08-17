@@ -2,18 +2,79 @@
     width: 100vw;
     height: fit-content;
     display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: sticky;
+    top: 0px;
+    position: -webkit-sticky;
+    justify-content: space-between;
+    z-index: 50;
+
+}
+.canvas-navbar-side-panel{
+    max-width: 400px;
+    min-width: 300px;
+    width: inherit;
+    background-color: whitesmoke;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 30;
+    padding-bottom: 30px;
+    height: fit-content;
+    min-height: 100vh;
+    
+}
+.under-side-panel-navbar{
+    display: flex;
     flex-direction: column;
+}
+.side-panel-close-sec{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: gray;
+    font-size: 2rem;
+}
+.side-panel-menu{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    padding-top: 60px;
+}
+.navbar-canvas-header{
+    width: 100vw;
+    display: flex;
+    padding: 0px 20px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-image:linear-gradient(345deg, #16101a , #614f6a,#16101a);
+
+
+}
+.navbar-header-left{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: fit-content;
+    gap: 30px;
+    align-items: center;
+}
+.navbar-header-left-icon{
+    color: white;
+    font-size: 2.5rem;
 }
 .canvs-navbar-cmp-sec{
     height: auto;
     padding: 15px 10px;
     display: flex;
     justify-content: center;
-    gap: 10px;
     align-items: center;
     flex: 1;
     flex-wrap: nowrap;
-    background-image: linear-gradient(30deg, white,#a1a1a1);
 }
 .under-navbar-cpm-sec{
     flex-shrink: 1;
@@ -21,36 +82,89 @@
     padding: 5px;
     display: flex;
     flex-direction: column;
-    gap:16px
 }
 .navbar-cpm-logo{
-    width: 200px;
+    width: 100px;
     height: auto;
 }
 .navbar-cpm-name{
-    font-size: 1.5rem;
-    color: #0065ff;
+    font-size: 1.8rem;
+    color: white;
     font-weight: bold;
-    text-shadow: 2px 4px 2px white;
+    text-shadow: 0px 4px 0px #201323;
 }
 
 .navbar-cpm-status{
-    font-size: 1.2rem;
-    color: white;
+    font-size: 1.0rem;
+    color: #04ec04;
     font-weight: bold;
     position: relative;
     left: -18px;
-    text-shadow: 0px 1px 4px black
+    text-shadow: 1px 1px 0px #000000;
+}
+.navbar-header-right-btn-sec{
+    display: flex;
+    flex-direction: row;
+    border-collapse: collapse;
+    border-spacing: 0px;
+    color: white;
+}
+.navbar-header-right-btn{
+    border: 1px solid white;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+.navbar-signup{
+    border-right: none;
 }
 
-@media only screen and (max-width:500px) {
-    .navbar-cpm-logo{
-        width: 120px;
+@media only screen and (max-width:650px) {
+    .navbar-header-left {
+        gap: 0px;
     }
-    .navbar-cpm-name{
-        font-size: 1.2rem;
+    .navbar-header-right-btn {
+        padding: 2px 5px;
     }
-    .navbar-cpm-status{
+    .navbar-signup{
+        display: none;
+    }
+}
+
+
+@media only screen and (max-width:520px) {
+    .navbar-header-left-icon {
+        font-size: 2rem;
+    }
+    .navbar-cpm-logo {
+        width: 73px;
+    }
+    .navbar-cpm-name {
+        font-size: 1.5rem;
+    }
+    .navbar-cpm-status {
         font-size: 0.8rem;
     }
+}
+
+
+@media only screen and (max-width:420px) {
+    .navbar-canvas-header {
+        padding: 0px 10px;
+    }
+    .canvs-navbar-cmp-sec {
+        padding: 7px 6px;
+    }
+    .navbar-cpm-logo {
+        width: 64px;
+    }
+    .navbar-cpm-name {
+        font-size: 1.3rem;
+    }
+    .navbar-header-right-btn {
+        font-size: 0.7rem;
+    }
+    .navbar-cpm-status {
+        font-size: 0.7rem;
+    }
+
 }

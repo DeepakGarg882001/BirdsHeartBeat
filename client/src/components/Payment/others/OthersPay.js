@@ -4,6 +4,7 @@ import TempleteUtilise from '../Utilised/TempleteUtilise';
 import { useSelector,useDispatch } from 'react-redux';
 import OthersUtiliseAction from '../../../redux/actions/OthersUtiliseAction';
 
+import { motion} from "framer-motion";
 
 const OthersPay = () => {
 

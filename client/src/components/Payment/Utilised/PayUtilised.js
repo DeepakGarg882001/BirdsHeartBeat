@@ -6,6 +6,7 @@ import { BsGraphUp } from "react-icons/bs";
 
 import { useSelector } from "react-redux";
 import { Link, Outlet, useLocation } from "react-router-dom";
+import { motion} from "framer-motion";
 
 const PayUtilised = () => {
   const data = useSelector((state) => state.BalanceStatusReducer);
@@ -17,6 +18,8 @@ const PayUtilised = () => {
   const healthAmount = data.total_health_amount;
   const nestAmount = data.total_nest_amount;
   const otherAmount = data.total_others_amount;
+  const DonationUtilised = data.total_donation_utilised;
+
 
   const [amount, setAmount] = useState(foodAmount);
 
@@ -32,6 +35,8 @@ const PayUtilised = () => {
       setAmount(nestAmount);
     } else if (currentPath === "/balance/utilise/other") {
       setAmount(otherAmount);
+    } else if (currentPath === "/balance/utilise") {
+      setAmount(DonationUtilised);
     }
 
   }, [currentPath]);

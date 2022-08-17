@@ -1,0 +1,161 @@
+
+.signUp-canvas{
+    width: 100vw;
+    min-height: 86vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.signUp-paper{
+    width:100vw;
+    justify-content: left;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+.signUp-form-container{
+    width: auto;
+    display:flex;
+    padding: 50px;
+    padding-top: 10px;
+    flex-direction: column;
+    margin: 0px auto;
+}
+.signUp-wel-sec{
+    background-clip: text;
+    font-size: 3rem;
+    color: transparent;
+    font-weight: bolder;
+    text-align: center;
+    margin-top: 26px;
+    margin-bottom: 15px;
+    background-image: linear-gradient(30deg, red,blue);
+}
+.signUp-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 7px;
+    margin: 15px 0px;
+}
+.signUp-field-icon{
+    font-size: 1.5rem;
+ }
+.signUp-btn{
+    color: blueviolet;
+    font-weight: 500;
+    background-color: aliceblue;
+    padding: 10px 30px;
+    width: fit-content;
+    margin: 0 auto;
+    margin-top: 30px;
+    border-radius: 8px;
+    font-size: larger;
+}
+.signUp-form-others{
+    margin-top: 20px;
+    width: fit-content;
+    padding: 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #e3dfdf;
+    border-radius: 22px;
+   
+}
+.signUp-form-new-account{
+    background-color: orange;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    padding: 10px 30px;
+    width: fit-content;
+    border-radius: 22px;
+}
+.signUp-form-join{
+    padding: 10px 30px;
+    font-weight: bolder;
+    font-size: 1.2rem;
+    color: #4000ff;
+}
+.signUp-canvas-image{
+    width: auto;
+    height: 80vh;
+    max-height: 86vh;
+}
+.signUp-img-size{
+    width: auto;
+    height: fit-content;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+@media only screen and (max-width:1309px) {
+    .signUp-canvas-image{
+        width: 54%;
+        height: auto;
+    }
+    .signUp-form-container{
+        padding: 30px;
+        padding-left: 10px;
+    }
+}
+
+
+@media only screen and (max-width:990px) {
+    .signUp-canvas{
+        height: auto;
+        padding: 15px 0px;
+    }
+    .signUp-paper{
+        flex-direction:column;
+        width: 100%;
+    }
+    .signUp-form-container{
+        width: fit-content;
+        margin-top: -17%;
+    }
+    .signUp-form{
+        gap: 7px;
+    }
+    .signUp-canvas-image{
+        height: auto;
+        width: 100%;
+    }
+}
+
+
+@media only screen and (max-width:900px) {
+    .signUp-form-container{
+        margin-top: -22%;
+    }
+}
+
+
+@media only screen and (max-width:510px) {
+    
+    .signUp-paper{
+            width: 100%;
+    }
+    .signUp-wel-sec{
+        margin-bottom: 30px;
+        font-size: 2.5rem;
+    }
+    .signUp-form-container{
+        padding: 20px;
+        padding-left: 20px;
+    }
+    .signUp-btn{
+        margin-top: 25px;
+    }
+    .signUp-form-new-account{
+        font-size: 1.1rem;
+        padding: 10px 20px;
+    }
+    .signUp-form-join{
+        font-size: 1.1rem;
+        padding: 10px 20px;
+    }
+}

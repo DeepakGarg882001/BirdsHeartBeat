@@ -2,6 +2,7 @@ import React ,{useEffect} from 'react'
 import { useDispatch } from 'react-redux';
 import DonationGainAction from '../../redux/actions/donationGainAction';
 
+import { motion} from "framer-motion";
 
 const Home = () => {
 

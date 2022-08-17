@@ -60,6 +60,9 @@
     gap: 4px;
     font-size: 1.2rem;
 }
+.accordion-model-img-size{
+        max-height: 86%;
+   }
 
 @media only screen and (min-width:1340px){
    .accordion-model-img-size{

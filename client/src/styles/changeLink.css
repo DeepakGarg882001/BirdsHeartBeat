@@ -1,0 +1,27 @@
+.change-link-canvas{
+    width: 100vw;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.change-link-form{
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    background-color: white;
+    gap: 30px;
+    justify-content:center;
+    align-items: center;
+}
+.change-link-form-btn{
+    padding: 10px 30px;
+    background-color: blue;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    font-size: 1.4rem;
+    width: fit-content;
+}

@@ -29,6 +29,10 @@ const ConstDoc = new mongoose.Schema({
     total_others_amount:{
         type:Number,
         default:0
+    },
+    groupLink:{
+        type:String,
+        default:"none"
     }
 
 });

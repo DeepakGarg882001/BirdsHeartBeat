@@ -3,6 +3,7 @@ import "../../styles/checkPay.css";
 
 import BalanceStatus from "./BalanceStatus";
 import { Link, Outlet ,useLocation } from "react-router-dom";
+import { motion} from "framer-motion";
 
 
 
@@ -24,8 +25,8 @@ const CheckPay = () => {
 
         <div className="check-pay-middle-part">
 
-          <div>
-            <h1>Check all the payments here </h1>
+          <div className="check-pay-middle-top">
+            <h1>Check all the Details related to Donation </h1>
           </div>
            
            <div className="check-pay-tab-sec">

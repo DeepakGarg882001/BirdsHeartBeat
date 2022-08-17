@@ -1,0 +1,91 @@
+.makeUser-admin-canvas{
+    width: 100vw;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0px;
+    background-image: linear-gradient(30deg , whitesmoke ,#f2f2ff);
+}
+
+
+.makeUser-admin-canvas-bottom{
+    width: 100%;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.makeuser-admin-bottom-main{
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.makeuser-admin-table{
+    width: 100%;
+    text-align: left;
+}
+.makeuser-admin-table-head{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 40px;
+}
+.makeuser-admin-table-head-col{
+    padding: 7px 20px;
+    color: white;
+    background-color: black;
+    font-size: 1.4rem;
+    min-width: fit-content;
+    font-weight: 500;
+}
+.makeuser-admin-table-body-col{
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    min-width: fit-content;
+}
+.create-admin-sec{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    
+}
+.create-admin-sec-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    color: forestgreen;
+    gap: 6px;
+}
+.make-member-admin-no-user{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0px;
+    font-size: 1.2rem;
+}
+
+@media only screen and (min-width:1450px) {
+    .makeuser-admin-bottom-main{
+        width: 94%;
+    }
+}
+
+@media only screen and (max-width:1400px) {
+    .makeuser-admin-bottom-main{
+       white-space: nowrap;
+       overflow: auto;
+       display: block;
+    }
+    .makeuser-admin-table-head{
+        top: 0px;
+    }
+}

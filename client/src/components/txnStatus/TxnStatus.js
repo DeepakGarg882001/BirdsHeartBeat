@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useParams , useNavigate } from 'react-router-dom';
 import swal from "sweetalert";
 import {  } from 'react-router-dom';
+import { motion} from "framer-motion";
 
 const TxnStatus = () => {
    

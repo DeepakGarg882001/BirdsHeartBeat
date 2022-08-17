@@ -3,6 +3,7 @@ import "../../../styles/donationGainList.css";
 
 import { useSelector } from "react-redux";
 import { BiRupee } from "react-icons/bi";
+import { motion} from "framer-motion";
 
 
 const DonationGainList = () => {

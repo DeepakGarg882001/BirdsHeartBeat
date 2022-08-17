@@ -4,17 +4,18 @@ import "../../../styles/accordion.css";
 import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
 import {IoClose} from "react-icons/io5";
 import {SiGooglemaps} from "react-icons/si";
+import { motion} from "framer-motion";
 
-const url = process.env.REACT_APP_SERVER_URL;
 
 const AccordionUtilise = ({ data }) => {
   const [isActive, setIsActive] = useState(false);
+  const url =process.env.REACT_APP_SERVER_URL;
+
 
   const [showDisplay,setShowDisplay]= useState("none");
   const [path,setPath]=useState("");
   
   const imgClicked =(imgPath)=>{
-    console.log("called");
     setPath(imgPath);
     if(showDisplay==="none"){
       setShowDisplay("flex");
@@ -36,7 +37,7 @@ const AccordionUtilise = ({ data }) => {
               <h2>Location</h2>
             </div>
             </a> 
-            {data.images.map((data, index) => {
+            {data.images ? data.images.map((data, index) => {
               return (
                 <React.Fragment key={index}>
                   <div style={{width:"auto",height:"100px"}} >
@@ -44,7 +45,9 @@ const AccordionUtilise = ({ data }) => {
                   </div>
                 </React.Fragment>
               );
-            })}
+            })
+             : <></>
+            }
 
             
           </div>

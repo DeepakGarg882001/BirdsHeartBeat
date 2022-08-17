@@ -26,7 +26,7 @@ const DonationUtilise_Doc= new mongoose.Schema({
     type:Date,
     default: Date.now()
   }
-});
+},{timestamps:true});
 
 const DonationUtilise_Col = mongoose.model("DONATION_UTILISE",DonationUtilise_Doc);
 

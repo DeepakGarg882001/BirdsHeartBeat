@@ -4,6 +4,7 @@ import TempleteUtilise from '../Utilised/TempleteUtilise';
 
 import { useDispatch, useSelector } from 'react-redux';
 import HealthUtiliseAction from '../../../redux/actions/HealthUtiliseAction';
+import { motion} from "framer-motion";
 
 const HealthPay = () => {
 

@@ -18,7 +18,8 @@ const path= require("path");
 // Importing dotENV file
 dotENV.config({ path: "./config.env" });
 app.use(cookieParser());
-app.use(cors());
+const frontUrl = process.env.FRONT_END_URL;
+app.use(cors({credentials: true, origin: frontUrl,allowedHeaders:['Content-Type', 'Authorization']}));
 require("./DataBase/DB");
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

@@ -1,0 +1,188 @@
+
+.suggestion-canvas{
+    width: 100%;
+    min-height: 86vh;
+    display: flex;
+    padding: 30px 0px ;
+    flex-direction: column;
+    background-image: linear-gradient(30deg , whitesmoke ,#f2f2ff);
+}
+.suggestion-canvas-top{
+   width: 100%;
+   background-color: white;
+   padding: 30px 0px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   margin-bottom: 40px;
+}
+.suggestion-top-wel-sec{
+    font-size: 3rem;
+    font-weight: bolder;
+    background-clip: text;
+    color: transparent;
+    padding: 10px;
+    width: fit-content;
+    background-image: linear-gradient(to right, red,blue);
+}
+.suggestion-top-moto{
+    padding-top: 10px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-align: center;
+    color: #999999;
+    padding: 0px 10px;
+}
+.suggestion-top-detail{
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 20px;
+    background-clip: text;
+    color: transparent;
+    background-image: linear-gradient(45deg,#398000,#9100ff);
+}
+.suggestion-canvas-middle{
+    margin: 40px 0px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0px;
+
+}
+.sussestion-middle-form{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+.suggestion-middle-filed{
+    height: 160px;
+    border-radius: 8px;
+    background-color: white;
+    width: 500px;
+}
+.suggestion-btn{
+    color: black;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px 30px;
+    width: fit-content;
+    background-color: whitesmoke;
+}
+.suggestion-canvas-bottom{
+    width: 100%;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    flex-wrap: wrap;
+    padding: 40px 10px;
+    gap: 20px;
+    background-color: white;
+}
+.suggestion-card{
+    flex-shrink: 1;
+    flex-basis: 400px;
+    height: fit-content;
+    border-radius: 8px;
+    margin: 0px auto;
+    padding: 10px 0px;
+    background-image: linear-gradient(45deg, #268767,blue);
+    width: fit-content;
+    padding-bottom: 0px;
+}
+.under-suggestion-card{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    gap:10px;
+}
+.suggestion-card-user-sec{
+    width: 75px;
+    height: fit-content;
+    overflow: hidden;
+}
+.suggestion-card-user-img{
+    width: 75px;
+    height: 75px;
+    background-color: white;
+    border-radius: 50%;
+
+}
+.suggestion-card-date{
+    text-align: center;
+    font-weight: bold;
+    color: #fdfdfd;
+    font-size: 1.3rem;
+    margin-top: 20%;
+}
+.suggestion-card-time{
+    color: white;
+    text-align: right;
+    padding: 0px;
+    padding-right: 10px;
+}
+.suggestion-card-message-box{
+    max-width: 300px;
+    background-color: rgb(255, 255, 255);
+    overflow: auto;
+    white-space: wrap;
+    height: 165px;
+    border-radius: 7px;
+    color: gray;
+    font-size: 1.1rem;
+    padding: 10px;
+   
+}
+.sussestion-bottom-not-yet{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    font-size: 1.2rem;
+    
+    
+}
+
+@media only screen and (max-width:410px) {
+    .suggestion-card-user-sec{
+        width: 65px;
+    }
+    .suggestion-card-user-img{
+        width: 65px;
+        height: 65px;
+    }
+    .suggestion-card-message-box{
+        max-width: 270px;
+    }
+    .suggestion-canvas-bottom{
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+}
+
+@media only screen and (max-width:530px) {
+    .suggestion-top-wel-sec{
+        font-size: 2.5rem;
+    }
+    .suggestion-top-moto{
+        font-size: 1.3rem;
+    }
+    .suggestion-top-detail{
+        font-size: 1.2rem;
+    }
+    .suggestion-middle-filed{
+        width: 90%;
+    }
+    .suggestion-canvas-middle{
+        margin-bottom: 5px;
+    }
+}

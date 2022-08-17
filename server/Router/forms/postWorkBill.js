@@ -2,17 +2,14 @@ const router = require("../Rootroutes");
 const Const_Col = require("../../DataBase/collections/constants");
 const DonationUtilise_Col = require("../../DataBase/collections/donationUtilise");
 const upload = require("../../middleware/uploadFile");
+const memberAuthenticate = require("../../middleware/memberAuthenticate");
 
 
 
-router.post("/api/post/v/work/bill",upload,async (request,response)=>{
+router.post("/api/post/v/work/bill" , memberAuthenticate , upload , async (request,response)=>{
    
     try {
-        console.log(request.body);
-        console.log("body end");
         
-        console.log(request.files);
-        console.log("files end")
 
         const { type, userId,userName,amount,location_latitude,location_longitude } = request.body;
 
@@ -34,14 +31,24 @@ router.post("/api/post/v/work/bill",upload,async (request,response)=>{
             FileArray.push(file);
         })
        
-        console.log(FileArray);
         const Amount= Number(amount);
         
         const completeData = {
             type, userId,userName,amount:Amount,location_latitude,location_longitude,images:FileArray
         }
        
-        console.log(completeData);
+           
+        const isFormRepeated = await DonationUtilise_Col.findOne({userId,type,location_latitude,location_longitude,amount:Amount});
+
+        if(isFormRepeated){
+             const previousDate = (isFormRepeated.date).toLocaleDateString();
+             const current = new Date();
+             const currentDate = current.toLocaleDateString();
+
+             if(currentDate===previousDate){
+                return response.status(401).json({error:"Can't Upload same Data on same Day!"})
+             }
+        }
 
         // Get all Constants Value
         const getConstants = await Const_Col.findOne();

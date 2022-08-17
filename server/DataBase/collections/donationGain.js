@@ -53,7 +53,7 @@ const DonationGain_Doc= new mongoose.Schema({
     type:Date,
     default: Date.now()
   }
-});
+},{timestamps:true});
 
 const DonationGain_Col = mongoose.model("DONATION_GAIN",DonationGain_Doc);
 

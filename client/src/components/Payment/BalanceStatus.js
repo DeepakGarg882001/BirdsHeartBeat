@@ -3,6 +3,7 @@ import "../../styles/balanceStatus.css";
 import { BiRupee } from "react-icons/bi";
 import { useDispatch, useSelector } from "react-redux";
 import BalanceStatusAction from "../../redux/actions/balanceStautsAction";
+import { motion} from "framer-motion";
 
 const BalanceStatus = () => {
   const data = useSelector((state) => state.BalanceStatusReducer);
