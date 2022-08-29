@@ -3,7 +3,6 @@ import "../../styles/menu.css";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import userImg from "../../images/user.png";
-import { motion } from "framer-motion";
 
 import {
   MdHome,
@@ -27,6 +26,7 @@ import { LogOut_User } from "../../redux/actions/currentUserAction";
 
 const Menu = ({ setActivePanel }) => {
   const dispatch = useDispatch();
+  const url = process.env.REACT_APP_SERVER_URL;
 
   const user = useSelector((state) => state.CurrentUserReducer);
   const userRole = user.token ? user.userRole : [];
@@ -35,12 +35,18 @@ const Menu = ({ setActivePanel }) => {
       <div className="menu-canvas">
         {user.token ? (
           <div className="side-panel-profile">
-            <div className="side-panel-profile-img">
-              <img
-                src={user.image ? user.image : userImg}
-                className="menu-profile-img"
-              />
-            </div>
+            <Link
+              style={{ textDecoration: "none" }}
+              to="/dashboard"
+              onClick={() => setActivePanel("none")}
+            >
+              <div className="side-panel-profile-img">
+                <img
+                  src={user.image ? `${url}/${user.image.filePath}` : userImg}
+                  className="menu-profile-img"
+                />
+              </div>
+            </Link>
             <div className="side-panel-profile-name">
               <h1>{user.name}</h1>
             </div>
@@ -49,7 +55,11 @@ const Menu = ({ setActivePanel }) => {
 
         <div className="side-panel-options">
           <ul className="menu-list-desk">
-            <Link to="/" onClick={() => setActivePanel("none")}>
+            <Link
+              style={{ textDecoration: "none" }}
+              to="/"
+              onClick={() => setActivePanel("none")}
+            >
               <li className="menu-list-option">
                 <MdHome /> Home{" "}
               </li>
@@ -65,7 +75,11 @@ const Menu = ({ setActivePanel }) => {
                 </li>
               </Link>
             ) : (
-              <Link to="/join" onClick={() => setActivePanel("none")}>
+              <Link
+                style={{ textDecoration: "none" }}
+                to="/join"
+                onClick={() => setActivePanel("none")}
+              >
                 <li className="menu-list-option">
                   <FaRegHandshake /> Join US{" "}
                 </li>
@@ -93,7 +107,11 @@ const Menu = ({ setActivePanel }) => {
                 </li>
               </Link>
             ) : (
-              <Link to="/balance/gain" onClick={() => setActivePanel("none")}>
+              <Link
+                style={{ textDecoration: "none" }}
+                to="/balance/gain"
+                onClick={() => setActivePanel("none")}
+              >
                 <li className="menu-list-option">
                   <MdAccountBalance /> Balance{" "}
                 </li>
@@ -110,7 +128,11 @@ const Menu = ({ setActivePanel }) => {
                 </li>
               </Link>
             ) : (
-              <Link to="/donate" onClick={() => setActivePanel("none")}>
+              <Link
+                style={{ textDecoration: "none" }}
+                to="/donate"
+                onClick={() => setActivePanel("none")}
+              >
                 <li className="menu-list-option">
                   <HiOutlineCurrencyRupee /> Donate{" "}
                 </li>
@@ -127,7 +149,11 @@ const Menu = ({ setActivePanel }) => {
                 </li>
               </Link>
             ) : (
-              <Link to="/members" onClick={() => setActivePanel("none")}>
+              <Link
+                style={{ textDecoration: "none" }}
+                to="/members"
+                onClick={() => setActivePanel("none")}
+              >
                 <li className="menu-list-option">
                   <FaUsers /> Members{" "}
                 </li>
@@ -144,23 +170,28 @@ const Menu = ({ setActivePanel }) => {
                 </li>
               </Link>
             ) : (
-              <Link to="/about" onClick={() => setActivePanel("none")}>
+              <Link
+                style={{ textDecoration: "none" }}
+                to="/about"
+                onClick={() => setActivePanel("none")}
+              >
                 <li className="menu-list-option">
                   <MdOutlineInfo /> About{" "}
                 </li>
               </Link>
             )}
             {userRole.role === "admin_1" ? (
-              <Link
-                to="/root/show/admin"
-                onClick={() => setActivePanel("none")}
-              >
+              <Link to="/add/new/memory" onClick={() => setActivePanel("none")}>
                 <li className="menu-list-option">
                   <AiOutlinePicture /> New Memory{" "}
                 </li>
               </Link>
             ) : (
-              <Link to="/suggestions" onClick={() => setActivePanel("none")}>
+              <Link
+                style={{ textDecoration: "none" }}
+                to="/suggestions"
+                onClick={() => setActivePanel("none")}
+              >
                 <li className="menu-list-option">
                   <BiMessageSquareEdit /> Suggestion{" "}
                 </li>
@@ -177,7 +208,11 @@ const Menu = ({ setActivePanel }) => {
                 </li>
               </Link>
             ) : (
-              <Link to="/contact" onClick={() => setActivePanel("none")}>
+              <Link
+                style={{ textDecoration: "none" }}
+                to="/contact"
+                onClick={() => setActivePanel("none")}
+              >
                 <li className="menu-list-option">
                   <MdOutlineContactSupport /> Contact{" "}
                 </li>
@@ -189,9 +224,7 @@ const Menu = ({ setActivePanel }) => {
                 to="/"
                 onClick={() => {
                   dispatch(LogOut_User());
-                  
                   setActivePanel("none");
-
                 }}
               >
                 <li className="menu-list-option">
@@ -199,12 +232,25 @@ const Menu = ({ setActivePanel }) => {
                 </li>
               </Link>
             ) : (
-              <Link to="/login" onClick={() => setActivePanel("none")}>
+              <Link
+                style={{ textDecoration: "none" }}
+                to="/login"
+                onClick={() => setActivePanel("none")}
+              >
                 <li className="menu-list-option">
                   <MdOutlineLogin /> Login{" "}
                 </li>
               </Link>
             )}
+            <Link
+                style={{ textDecoration: "none" }}
+                to="/stock"
+                onClick={() => setActivePanel("none")}
+              >
+                <li className="menu-list-option">
+                  <MdOutlineLogin /> Stock{" "}
+                </li>
+              </Link>
           </ul>
         </div>
       </div>

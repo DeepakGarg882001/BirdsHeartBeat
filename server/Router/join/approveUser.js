@@ -36,7 +36,7 @@ router.post("/join/approve", adminAuthenticate ,async (request, response) => {
       from: "birdsheartbeat.in@gmail.com",
       to: email,
       subject: " Join-Us Procedure ",
-      text: `Hi,${name}. Please join the WhatsApp Group for furture Procedure to became Member of BirdsHeartBeat. Link: https://chat.whatsapp.com/E3BtLbn25P91SiRi9mvLKd `,
+      text: `Hi,${name}. Congratulations , you are successfully verifed ,Please SignUp  `,
     };
     const rejectedMessage = {
       from: "birdsheartbeat.in@gmail.com",
@@ -51,11 +51,11 @@ router.post("/join/approve", adminAuthenticate ,async (request, response) => {
           console.log(error);
           return response.status(500).json({ error });
         } else {
-          console.log("mal successfully send !");
+          console.log("mail successfully send !");
 
           const findUser = await JoinUsCol.findOneAndUpdate(
             { email },
-            { selected: action, memberId, memberName }
+            { selected: action,$push:{ approvedBy:{ adminId:memberId, adminName:memberName,action}} }
           );
 
           if (findUser) {

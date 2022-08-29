@@ -15,6 +15,8 @@ import NotAdminUser_Reducer from "./reducers/NotAdminUser_Reducer";
 import RejectedUser_Reducer from "./reducers/RejectedUsers_Reducer"; 
 import ContactUsMessages_Reducer from "./reducers/ContactUsMessages_Reducer";
 import UniqueMemberData_Reducer from "./reducers/UniqueMemberData_Reducer";
+import ShowAllAdmins_Reducer from "./reducers/ShowAllAdmins_Reducer";
+import UniqueMemberWork_Reducer from "./reducers/UniqueMemberWork_Reducer";
 
 const RootReducer = combineReducers({
 
@@ -33,6 +35,8 @@ const RootReducer = combineReducers({
     RejectedUser_Reducer,
     ContactUsMessages_Reducer,
     UniqueMemberData_Reducer,
+    ShowAllAdmins_Reducer,
+    UniqueMemberWork_Reducer,
     
 });
 

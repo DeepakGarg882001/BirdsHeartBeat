@@ -8,10 +8,9 @@ import {Link} from "react-router-dom"
 import { motion} from "framer-motion";
 
 const Members = () => {
+  const url = process.env.REACT_APP_SERVER_URL;
   
   const data = useSelector((state)=>state.MembersDataReducer);
-
-  console.log(data);
   const dispatch = useDispatch();
   
   const [query,setQuery]= useState("");
@@ -45,7 +44,7 @@ const Members = () => {
 
               <div className='under-member-canvas-card'>
                 <div className='members-card-img-sec'>
-                  <img className='members-img-size' src={data.image ? data.image :  userImg}  />
+                  <img className='members-img-size' src={data.image ? `${url}/${data.image.filePath}` :  userImg}  />
                 </div>
                 <div className='members-name-sec'>
                   <h1> {data.name} </h1>

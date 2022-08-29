@@ -45,6 +45,13 @@ export const Set_ContactUsMessages_Data ="Set_ContactUsMessages_Data";
 export const Get_UniqueMember_Data ="Get_UniqueMember_Data";
 export const Set_UniqueMember_Data ="Set_UniqueMember_Data";
 
+export const Get_UniqueMember_Work ="Get_UniqueMember_Work";
+export const Set_UniqueMember_Work ="Set_UniqueMember_Work";
+
+export const Get_All_Admins ="Get_All_Admins";
+export const Set_All_Admins ="Set_All_Admins";
+
+
 
 
 

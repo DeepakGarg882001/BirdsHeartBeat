@@ -8,10 +8,7 @@ const Support_Doc = new mongoose.Schema({
         required:true
       },
 
-      companyLogo:{
-        type:"String",
-        required:true
-      },
+      companyLogo:[Object],
 
       companyLink:{
         type:"String",
@@ -29,6 +26,6 @@ const Support_Doc = new mongoose.Schema({
 
 },{timestamps:true});
 
-const Support_Col = mongoose.model("SUPPORTED_BY",Support_Doc);
+const Support_Col = mongoose.model("SUPPORTED",Support_Doc);
 
-module.export = Support_Col;
+module.exports = Support_Col;

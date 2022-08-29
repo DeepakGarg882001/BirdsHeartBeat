@@ -47,8 +47,15 @@
     justify-content: center;
     gap: 10px;
 }
+.about-us-canvas-illustrator{
+    justify-content: center;
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+}
 .aware-people-img{
-    width: 300px;
+    width: 270px;
+    max-width: inherit;
 }
 .aboutus-work-step-title{
     font-size: 1.4rem;
@@ -57,11 +64,12 @@
 }
 .aboutus-work-step-dis-box{
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
     justify-content: space-around;
     align-items: center;
     gap: 20px;
 }
+
 .aboutus-work-step-dis-text{
     font-size: 1.1rem;
     font-weight: 400;
@@ -71,6 +79,7 @@
 }
 .two-img-sec{
     margin-top: 20px;
+    justify-content: center;
 }
 .aboutus-work-step-img{
     width: auto;
@@ -86,5 +95,53 @@
 @media only screen and (max-width:1000px) {
     .aboutus-work-step-img {
         height: 212px;
+    }
+    .aboutUs-canvas-text-sec {
+        width: 89%;
+    }
+}
+
+
+@media only screen and (max-width:750px) {
+    .aboutUs-canvas-text-sec {
+        width: 94%;
+    }
+    .aware-people-img {
+        width: 224px;
+    }
+    .aboutus-work-step-img {
+        height: 174px;
+    }
+}
+
+
+@media only screen and (max-width:630px) {
+    .aboutus-work-step-dis-box {
+        flex-direction: column-reverse;
+    }
+    .aboutus-work-step-img {
+        height: auto;
+        width: 100%;
+      
+    }  
+    .aboutus-work-step-dis-text {
+        max-width: 500px;
+        min-width: 300px;
+    }
+}
+
+
+
+@media only screen and (max-width:500px) {
+    .aboutus-canvas-heading {
+        font-size: 1.8rem;
+    }
+    .aboutus-canvas-about-heading-text {
+        gap: 5px;
+        font-size: 1rem;
+        padding-bottom: 30px;
+    }
+    .aboutus-work-step-title {
+        font-size: 1.2rem;
     }
 }

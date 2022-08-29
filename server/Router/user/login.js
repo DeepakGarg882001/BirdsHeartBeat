@@ -64,10 +64,12 @@ router.post("/login", async (request,response)=>{
             console.log(token);
 
             // Add token to DB
-            const addToken = await UserCol.findByIdAndUpdate(isUserExists._id , {token});
-           
+            const addToken = await UserCol.findByIdAndUpdate({_id:isUserExists._id} , {token});
+
+            const user = await UserCol.findOne({_id:isUserExists._id});
+
             if(addToken){
-                response.status(201).cookie("BHB_token",token).json({message:"You have Successfully LogedIn !",data:addToken});
+                response.status(201).cookie("BHB_token",token).json({message:"You have Successfully LogedIn !",data:user});
             }else{
                 response.status(401).json({error:" Login Process failed !"});
             }

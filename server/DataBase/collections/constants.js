@@ -33,8 +33,15 @@ const ConstDoc = new mongoose.Schema({
     groupLink:{
         type:String,
         default:"none"
-    }
-
+    },
+    linkChanges:[{
+        link:{
+            type:String
+        },
+        adminId:{
+            type:String
+        }
+    }]
 });
 
 const Const_Col = mongoose.model("CONSTANT",ConstDoc);

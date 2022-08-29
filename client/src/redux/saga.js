@@ -39,7 +39,12 @@ import {
 
   Get_UniqueMember_Data,
   Set_UniqueMember_Data,
+  
+  Get_All_Admins,
+  Set_All_Admins,
 
+  Get_UniqueMember_Work,
+  Set_UniqueMember_Work,
 
 } from "./reduxConstants";
 
@@ -62,7 +67,14 @@ function* getDonationGain() {
   });
 
   const response = yield makeRequest.json();
-  const data = response.data;
+  let data ;
+
+  if(response.data){
+    data = response.data;
+  }
+  if(response.error){
+    data = response;
+  }
 
   yield put({ type: Set_Donation_Gain_Data, data: data });
 
@@ -84,7 +96,14 @@ function* getBalanceStatus() {
   });
 
   const response = yield makeRequest.json();
-  const data = response.data;
+  let data ;
+
+  if(response.data){
+    data = response.data;
+  }
+  if(response.error){
+    data = response;
+  }
 
   yield put({ type: Set_Balance_Status, data: data });
 
@@ -104,7 +123,14 @@ function* getFoodUtiliseData() {
   });
 
   const response = yield makeRequest.json();
-  const data = response.data;
+  let data ;
+
+  if(response.data){
+    data = response.data;
+  }
+  if(response.error){
+    data = response;
+  }
 
   yield put({ type: Set_Food_Utilse_Data, data: data });
 
@@ -125,7 +151,14 @@ function* getMaterialUtiliseData() {
   });
 
   const response = yield makeRequest.json();
-  const data = response.data;
+  let data ;
+
+  if(response.data){
+    data = response.data;
+  }
+  if(response.error){
+    data = response;
+  }
 
   yield put({ type: Set_Material_Utilse_Data, data: data });
 
@@ -146,8 +179,14 @@ function* getHealthUtiliseData() {
   });
 
   const response = yield makeRequest.json();
-  const data = response.data;
+  let data ;
 
+  if(response.data){
+    data = response.data;
+  }
+  if(response.error){
+    data = response;
+  }
   yield put({ type: Set_Health_Utilse_Data, data: data });
 
 }
@@ -167,7 +206,14 @@ function* getNestUtiliseData() {
   });
 
   const response = yield makeRequest.json();
-  const data = response.data;
+  let data ;
+
+  if(response.data){
+    data = response.data;
+  }
+  if(response.error){
+    data = response;
+  }
 
   yield put({ type: Set_Nest_Utilse_Data, data: data });
 
@@ -188,7 +234,14 @@ function* getOthersUtiliseData() {
   });
 
   const response = yield makeRequest.json();
-  const data = response.data;
+  let data ;
+
+  if(response.data){
+    data = response.data;
+  }
+  if(response.error){
+    data = response;
+  }
 
   yield put({ type: Set_Others_Utilse_Data, data: data });
 
@@ -230,8 +283,7 @@ function* getNotVerifiedUser() {
 
 // Call API and Get All Members Data !
 function* getMemberData(action) {
-   console.log("at saga");
-   console.log(action.query);
+  
   const makeRequest = yield fetch(`${url}/members/all?key=${action.query}`, {
     method: "GET",
     headers: {
@@ -240,7 +292,14 @@ function* getMemberData(action) {
   });
 
   const response = yield makeRequest.json();
-  const data = response.data;
+  let data ;
+
+  if(response.data){
+    data = response.data;
+  }
+  if(response.error){
+    data = response;
+  }
 
   yield put({ type: Set_Members_Data, data: data });
 
@@ -261,7 +320,14 @@ function* getSuggestion() {
    },
  });
  const response = yield makeRequest.json();
- const data = response.data;
+ let data ;
+
+ if(response.data){
+   data = response.data;
+ }
+ if(response.error){
+   data = response;
+ }
  yield put({ type: Set_Suggestion_Data, data: data });
 
 }
@@ -275,7 +341,7 @@ function* getSuggestion() {
 // Call API and Get All ContactUs Messages !
 function* getContactUsMessages() {
  
-  const makeRequest = yield fetch(`${url}/suggestion`, {
+  const makeRequest = yield fetch(`${url}/contact/messages`, {
     method: "GET",
     headers: {
       Accept:"application/json",
@@ -284,7 +350,15 @@ function* getContactUsMessages() {
   credentials:"include",
   });
   const response = yield makeRequest.json();
-  const data = response.data;
+  console.log(response);
+  let data ;
+
+  if(response.data){
+    data = response.data;
+  }
+  if(response.error){
+    data = response;
+  }
   yield put({ type: Set_ContactUsMessages_Data, data: data });
  
  }
@@ -296,9 +370,9 @@ function* getContactUsMessages() {
 
 
 // Call API and Get Users Which are not Admin !
-function* getNotAdminUsersData() {
- 
-  const makeRequest = yield fetch(`${url}/users/members/not/admin`, {
+function* getNotAdminUsersData(action) {
+  
+  const makeRequest = yield fetch(`${url}/users/members/not/admin?key=${action.query}`, {
     method: "GET",
     headers: {
       Accept:"application/json",
@@ -307,7 +381,14 @@ function* getNotAdminUsersData() {
   credentials:"include",
   });
   const response = yield makeRequest.json();
-  const data = response.data;
+  let data ;
+
+  if(response.data){
+    data = response.data;
+  }
+  if(response.error){
+    data = response;
+  }
   yield put({ type: Set_NotAdminUsers_Data, data: data });
  
  }
@@ -350,19 +431,77 @@ function* getRejectedUsersData() {
 // Call API and Get all data of a Unique Member !
 function* getUniqueMember(action) {
   
-  const id = action.id;
-  const makeRequest = yield fetch(`${url}`, {
+  const makeRequest = yield fetch(`${url}/unique/member?key=${action.data}`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
     },
   });
   const response = yield makeRequest.json();
-  const data = response.data;
+  let data ;
+
+  if(response.data){
+    data = response.data;
+  }
+  if(response.error){
+    data = response;
+  }
   yield put({ type: Set_UniqueMember_Data, data: data });
  
  }
  
+
+
+
+
+// Call API and Get all Work data of a Unique Member !
+function* getUniqueMemberWork(action) {
+  
+  const makeRequest = yield fetch(`${url}/work/unique/member?key=${action.data}`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  const response = yield makeRequest.json();
+  console.log(response);
+  let data ;
+
+  if(response.data){
+    data = response.data;
+  }
+  if(response.error){
+    data = response;
+  }
+  yield put({ type: Set_UniqueMember_Work, data: data });
+ 
+ }
+ 
+
+
+// Call API and Get List of all Admins !
+  function* getAllAdminUsersData(action) {
+    const makeRequest = yield fetch(`${url}/users/members/show/admin?key=${action.query}`, {
+      method: "GET",
+      headers: {
+        Accept:"application/json",
+      "Content-Type": "application/json",
+    },
+    credentials:"include",
+    });
+    const response = yield makeRequest.json();
+    let data ;
+  
+    if(response.data){
+      data = response.data;
+    }
+    if(response.error){
+      data = response;
+    }
+    yield put({ type: Set_All_Admins, data: data });
+   
+   }
+   
  
    
 
@@ -398,7 +537,13 @@ function* Saga() {
 
   yield takeEvery(Get_UniqueMember_Data, getUniqueMember);
 
+  yield takeEvery(Get_All_Admins, getAllAdminUsersData);
+  
+  yield takeEvery(Get_UniqueMember_Work, getUniqueMemberWork);
 
+
+ 
+  
 
 
 

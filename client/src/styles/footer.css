@@ -149,6 +149,7 @@
     .footer-canvas-middle{
         justify-content: flex-start;
         padding-left: 10%;
+        padding-top: 30px;
     }
 }
 

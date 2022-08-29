@@ -2,7 +2,7 @@ const router = require("../Rootroutes");
 const Contact_Col = require("../../DataBase/collections/contactUS");
 const adminAuthenticate = require("../../middleware/adminAuthenticate");
 
-router.get("/contact",adminAuthenticate , async(request,response)=>{
+router.get("/contact/messages",adminAuthenticate , async(request,response)=>{
 
  try {
      

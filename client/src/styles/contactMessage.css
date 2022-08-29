@@ -1,0 +1,112 @@
+
+.contact-message-canvas{
+    width: 100vw;
+    min-height: 86vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(30deg , whitesmoke ,#f2f2ff);
+
+}
+
+.contact-message-canvas-bottom{
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    flex-wrap: wrap;
+    padding: 30px 10px;
+}
+
+.contact-message-bottom-card{
+    box-shadow: 1px 1px 1px gray;
+    flex-shrink: 1;
+    flex-basis: 450px;
+    height: fit-content;
+}
+.under-contact-message-card{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.contact-message-card-left{
+    width: 69%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 7px;
+}
+.contact-message-card-right{
+    width: 31%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0px;
+}
+.contact-message-card-left-field{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    gap: 10px;
+    font-size: 1.3rem;
+    color: gray;
+    font-weight: 500;
+
+}
+.contact-message-card-client-msg-sec{
+    height: 175px;
+}
+.contact-message-left-attend-sec{
+    background-color: blue;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    padding: 4px;
+    font-size: 1.1rem;
+}
+
+.contact-meassge-crr-status{
+    margin-bottom: 5px;
+    width: 100px;
+    height: 100px;
+    border: 2px solid;
+    border-radius: 50%;
+    text-align: center;
+    word-break: break-word;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.contact-message-right-line-first{
+    border: 2px solid;
+    width: 0px;
+    height: 67px;
+    border-color: orange;
+}
+.contact-message-right-line-second{
+    border: 2px solid;
+    width: 0px;
+    height: 34px;
+    border-color: #dadada;
+}
+.contact-message-crr-response{
+    margin-top: 5px;
+    width: 100px;
+    height: 100px;
+    border: 2px solid;
+    border-radius: 50%;
+    text-align: center;
+    word-break: break-word;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

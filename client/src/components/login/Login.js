@@ -55,9 +55,13 @@ const Login = () => {
     });
 
     const response = await makeRequest.json();
-    console.log(response);
     if (response.error) {
-      Swal.fire("Sorry", `${response.error}`, "error");
+       if(response.error.name){
+        Swal.fire("Sorry", `${response.error.name}`, "error");
+       }
+       else{
+        Swal.fire("Sorry", `${response.error}`, "error");
+       }
     }
     if (response.message) {
       Swal.fire(
@@ -70,7 +74,7 @@ const Login = () => {
       navigate("/");
     }
     
-    setActive(!active);
+    setActive(false);
   };
 
   return (

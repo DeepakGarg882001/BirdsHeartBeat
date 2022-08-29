@@ -14,6 +14,9 @@ const UserDoc = new mongoose.Schema(
       type: Number,
       required: true,
     },
+    status: {
+      type: String,
+    },
     password: {
       type: String,
       required: true,
@@ -24,6 +27,7 @@ const UserDoc = new mongoose.Schema(
     occupation_Address: {
       type: String,
       required: true,
+      select: false,
     },
     occupation: {
       type: String,
@@ -32,22 +36,41 @@ const UserDoc = new mongoose.Schema(
     addhar_no: {
       type: Number,
       required: true,
+      select: false,
     },
     image: {
-      type: String,
+      fileName: {
+        type: String,
+      },
+      filePath: {
+        type: String,
+      },
+      fileType: {
+        type: String,
+      },
+      fileSize: {
+        type: String,
+      },
     },
     userRole: {
       role: {
         type: String,
         default: "member",
       },
-      adminId:{
-        type:String
-      },
-      adminName:{
-        type:String
-      }
     },
+    userRolChanges: [
+      {
+        role: {
+          type: String,
+        },
+        adminId: {
+          type: String,
+        },
+        adminName: {
+          type: String,
+        },
+      },
+    ],
     address: {
       type: String,
       default: "address not found",
@@ -56,18 +79,40 @@ const UserDoc = new mongoose.Schema(
       type: Date,
       default: Date.now(),
     },
-    forgotPassToken: {
-      type: String,
-    },
-    otp: {
-      type: Number,
-    },
+
     userAccPlay: {
       accPlay: {
         type: String,
         default: "running",
       },
-      adminId: {
+    },
+    userAccPlayChanges: [
+      {
+        accPlay: {
+          type: String,
+        },
+        adminId: {
+          type: String,
+        },
+      },
+    ],
+    socialAcc: {
+      instagram: {
+        type: String,
+      },
+      facebook: {
+        type: String,
+      },
+      linkedin: {
+        type: String,
+      },
+      youtube: {
+        type: String,
+      },
+      github: {
+        type: String,
+      },
+      whatsApp: {
         type: String,
       },
     },

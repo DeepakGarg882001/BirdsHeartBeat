@@ -55,7 +55,8 @@
 }
 .members-card-img-sec{
     width: 100%;
-    height: 290px;
+    height: 308px;
+    background-color: aliceblue;
 }
 .members-img-size{
     width: auto;
@@ -66,6 +67,7 @@
 }
 .members-name-sec{
     width: 100%;
+    background-color: white;
     text-align: center;
     padding:0px 10px;
     color: orange;
@@ -103,6 +105,7 @@
     }
     .members-card-img-sec{
         height: fit-content;
+        max-height: 182px;
     }
     .members-name-sec{
         font-size: 1.28rem;

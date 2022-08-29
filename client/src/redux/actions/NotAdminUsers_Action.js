@@ -1,10 +1,11 @@
 import { Get_NotAdminUsers_Data } from "../reduxConstants"; 
 
 
-const NotAdmin_Users = ()=>{
+const NotAdmin_Users = (query)=>{
   
     return({
-        type:Get_NotAdminUsers_Data
+        type:Get_NotAdminUsers_Data,
+        query
     })
 }
 

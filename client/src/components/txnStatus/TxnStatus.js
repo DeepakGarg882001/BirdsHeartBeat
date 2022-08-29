@@ -55,7 +55,7 @@ const TxnStatus = () => {
                 break;
 
 
-    case  '01': swal("Hurry !", msg01 ,"success").then(()=>  navigate("/balance"));  
+    case  '01': swal("Hurry !", msg01 ,"success").then(()=>  navigate("/balance/gain"));  
                 break;
     case '331': swal("Sorry !", msg331 ,"info").then(()=>  navigate("/"));  
                 break;

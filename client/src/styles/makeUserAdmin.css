@@ -3,12 +3,35 @@
     min-height: 80vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     padding: 30px 0px;
+    gap: 20px;
     background-image: linear-gradient(30deg , whitesmoke ,#f2f2ff);
 }
+.makeUser-admin-canvas-top{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: #423f3f;
+    font-size: 2rem;
+}
+.makeUser-admin-canvas-middle{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0px;
 
+}
+.makeUser-admin-middle-input{
+    width: 500px;
+    padding: 12px;
+    font-size: 1.5rem;
+    outline: none;
+}
 
 .makeUser-admin-canvas-bottom{
     width: 100%;
@@ -87,5 +110,19 @@
     }
     .makeuser-admin-table-head{
         top: 0px;
+    }
+}
+
+@media only screen and (max-width:600px) {
+    .makeUser-admin-middle-input {
+        width: 80%;
+        padding: 10px;
+        font-size: 1.2rem;
+    }
+    .makeUser-admin-canvas-top {
+        font-size: 1.5rem;
+    }
+    .makeUser-admin-canvas {
+      gap: 5px;
     }
 }

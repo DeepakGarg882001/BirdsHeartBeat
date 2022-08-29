@@ -40,6 +40,11 @@ import DisplayContactUsMessages from './contactUs_Messages/DisplayContactUsMessa
 import ShowAdmins from './showAdmins/ShowAdmins';
 
 import SupportedBy from './supported/SupportedBy';
+import NewMemoryAdd from './newMemory/NewMemoryAdd';
+
+import DashBoard from './dashboard/DashBoard';
+
+import ShowStock from './stock/ShowStock';
 
 import {AnimatePresence } from "framer-motion"
 
@@ -70,7 +75,7 @@ const Routers = () => {
        </Route>
        <Route path="/members" element={<Members />}  />
        <Route path="/join"    element={<JoinUs />}   />
-       <Route path="/profile:id" element={<Profile />}  />
+       
        <Route path="/txnStatus:key" element={<TxnStatus />}  />
        <Route path="/member/upload/work/bill" element={<PostWorkBill />}  />
        <Route path="/member/verify/user" element={<SelectUser />}  >
@@ -89,7 +94,15 @@ const Routers = () => {
        <Route path="/admin/client/message" element={<DisplayContactUsMessages />}  />
        <Route path="/root/show/admin" element={<ShowAdmins />}  />
        <Route path="/add/supported/new" element={<SupportedBy />}  />
+       <Route path="/add/new/memory" element={<NewMemoryAdd />}  />
        
+       <Route path="/profile:id" element={<Profile />}  />
+       <Route path="/dashboard" element={<DashBoard />}  />
+
+       <Route path="/stock" element={<ShowStock />}  />
+
+
+
        <Route path="*" element={<PageNotFound />} /> 
 
        

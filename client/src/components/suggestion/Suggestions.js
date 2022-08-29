@@ -21,7 +21,6 @@ const Suggestions = () => {
   const dispatch = useDispatch();
 
   const data = useSelector((state) => state.SuggestionReducer);
-  console.log(data);
   useEffect(() => {
     dispatch(SuggestionData());
   }, []);

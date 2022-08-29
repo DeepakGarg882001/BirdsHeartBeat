@@ -18,6 +18,20 @@ const Contact_Doc = new mongoose.Schema({
     clientMessage:{
         type:String,
         required:true
+    },
+    attendingBy:{
+        userId:{
+            type:String
+        }
+    },
+    closedBy:{
+        userId:{
+            type:String
+        }
+    },
+    progress:{
+        type:String,
+        default:"none"
     }
 
 },{timestamps:true});

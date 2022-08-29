@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import "../../styles/postWorkForm.css";
 
 import { Form, Field, Formik, ErrorMessage } from "formik";
@@ -63,6 +63,11 @@ const SupportedBy = () => {
     });
   };
 
+  useEffect(() => {
+    if (user.length === 0) {
+      navigate("*");
+    }
+  }, []);
 
   return (
     <>
@@ -90,7 +95,7 @@ const SupportedBy = () => {
               let data = new FormData();
               if (fileObj.length === 0) {
                 setActive(!active);
-                return swal("Sorry !", "Please Upload Image also !", "error");
+                return Swal.fire("Sorry !", "Please Upload Image also !", "error");
               }
 
               for (let i = 0; i < fileObj.length; i++) {

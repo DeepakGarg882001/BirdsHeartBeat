@@ -2,17 +2,17 @@ const router = require("../Rootroutes");
 const Const_Col = require("../../DataBase/collections/constants");
 const adminAuthenticate = require("../../middleware/adminAuthenticate");
 
-router.post("" , adminAuthenticate , async(request,response) =>{
+router.post("/admin/change/link" , adminAuthenticate , async(request,response) =>{
      
     try {
        
-        const { link} = request.body;
+        const { link,adminId} = request.body;
 
         if(!link){
             return response.status(401).json({error:"Please Provide New Group Link"});
         }
         
-        const updateLink = await Const_Col.updateOne({groupLink:link});
+        const updateLink = await Const_Col.findOneAndUpdate({},{groupLink:link,$push:{linkChanges:{link,adminId}}});
 
         if(!updateLink){
             return response.status(401).json({error:"Process Failed !"});

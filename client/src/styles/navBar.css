@@ -35,6 +35,7 @@
     right: 10px;
     color: gray;
     font-size: 2rem;
+    cursor: pointer;
 }
 .side-panel-menu{
     display: flex;
@@ -66,6 +67,7 @@
 .navbar-header-left-icon{
     color: white;
     font-size: 2.5rem;
+    cursor: pointer;
 }
 .canvs-navbar-cmp-sec{
     height: auto;
@@ -84,8 +86,8 @@
     flex-direction: column;
 }
 .navbar-cpm-logo{
-    width: 100px;
-    height: auto;
+    width: auto;
+    height: 68px;
 }
 .navbar-cpm-name{
     font-size: 1.8rem;
@@ -108,6 +110,7 @@
     border-collapse: collapse;
     border-spacing: 0px;
     color: white;
+    list-style-type: none;
 }
 .navbar-header-right-btn{
     border: 1px solid white;
@@ -116,6 +119,25 @@
 }
 .navbar-signup{
     border-right: none;
+}
+
+.navbar-header-profile{
+    width: 70px;
+    height: 70px;
+    overflow: hidden;
+    border-radius: 50%;
+    background-color: white;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.navbar-header-profile-img{
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 @media only screen and (max-width:650px) {
@@ -136,13 +158,17 @@
         font-size: 2rem;
     }
     .navbar-cpm-logo {
-        width: 73px;
+        height: 46px;
     }
     .navbar-cpm-name {
         font-size: 1.5rem;
     }
     .navbar-cpm-status {
         font-size: 0.8rem;
+    }
+    .navbar-header-profile{
+        width: 50px;
+        height: 50px;
     }
 }
 
@@ -155,7 +181,7 @@
         padding: 7px 6px;
     }
     .navbar-cpm-logo {
-        width: 64px;
+        height: 46px;
     }
     .navbar-cpm-name {
         font-size: 1.3rem;
@@ -166,5 +192,6 @@
     .navbar-cpm-status {
         font-size: 0.7rem;
     }
+   
 
 }

@@ -41,7 +41,7 @@ const AboutUs = () => {
             <p className="aboutus-work-step-title">
               We Aware people and Understood them the importance of Birds.
             </p>
-            <div className="aboutus-work-step-dis-box" style={{justifyContent:"center",flexDirection:"row-reverse"}}>
+            <div className="aboutus-work-step-dis-box" style={{justifyContent:"center"}}>
               <div className="aboutus-work-step-dis-text" style={{maxWidth:"560px",gap:"10px"}}>
                 <p>
                   Hi, We visit's many places like University, Schools,
@@ -53,7 +53,7 @@ const AboutUs = () => {
                   seeds, Birds transform entire landscapes.
                 </p>
               </div>
-              <div>
+              <div className="about-us-canvas-illustrator">
                 <img src={awarePeople} className="aware-people-img"/>
               </div>
             </div>
@@ -97,10 +97,8 @@ const AboutUs = () => {
 
           </div>
 
-          <div className="aboutus-canvas-heading">
-            <p>Initiated</p>
-          </div>
-          <div></div>
+         
+         
         </div>
 
       

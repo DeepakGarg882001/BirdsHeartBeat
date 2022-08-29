@@ -20,7 +20,10 @@ require("./join/deletRejectedUser");
 require("./user/login");
 require("./user/signUp");
 
-
+// ======= User DashBoard ====== //
+require("./dashboard/addSocialAcc");
+require("./dashboard/changeDetails");
+require("./dashboard/changeImg");
 
 // ====== Account Pause Play ======= //
 require("./makeAdmin/pauseUser");
@@ -44,6 +47,8 @@ require("./forms/postWorkBill");
 
 // ===== Members ===== //
 require("./members/membersList");
+require("./members/uniqueMember");
+require("./members/uniqueMemberWork");
 
 
 // ====== Suggestions ===== //
@@ -64,7 +69,15 @@ require("./user/verifyOTP");
 // ===== Make Admin ===== //
 require("./makeAdmin/getNotAdminUsers");
 require("./makeAdmin/makeMember_admin");
+require("./makeAdmin/showAllAdmins");
 
 // ==== Supported By ====== //
 require("./supportedBy/createSupportedComp");
 require("./supportedBy/getSupportedComp");
+
+
+// ===== ChangeLink ==== //
+require("./changeGrouplink/changeLink");
+
+// ==== Add New Memory ==== //
+require("./newMemory/createMemory");

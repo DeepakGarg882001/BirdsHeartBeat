@@ -4,7 +4,6 @@ import Saga from "./saga";
 import createSagaMiddleware  from "redux-saga"
 
 const sagaMiddleware = createSagaMiddleware();
-console.log("store is runing");
 const Store = configureStore(
     {
        reducer:RootReducer,
