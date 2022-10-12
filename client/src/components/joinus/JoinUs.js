@@ -17,10 +17,11 @@ import "react-toastify/dist/ReactToastify.css";
 
 import joinUsImg from "../../images/joinUs.png";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const JoinUs = () => {
   const url = process.env.REACT_APP_SERVER_URL;
-
+  const navigate = useNavigate();
   const [active, setActive] = useState(false);
 
   const dataFields = {
@@ -86,6 +87,24 @@ const JoinUs = () => {
             validationSchema={validation}
             onSubmit={async (values, { resetForm }) => {
               setActive(!active);
+  
+              let timerInterval;
+                const waitingAlert = Swal.fire({
+                  title: "Please wait... ",
+                  showConfirmButton: false,
+                  html: "It may Take time upto  <b> </b> minutes .",
+                  timer: 130000,
+                  timerProgressBar: true,
+                  didOpen: () => {
+                    Swal.showLoading();
+                    const b = Swal.getHtmlContainer().querySelector("b");
+                    timerInterval = setInterval(() => {
+                       let min = Math.floor((Swal.getTimerLeft() / 1000 / 60) << 0);
+                       let sec = Math.floor((Swal.getTimerLeft() / 1000) % 60).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false});
+                      b.textContent = min+":"+sec;
+                    }, 1000);
+                  },
+                });
 
               const makeRequest = await fetch(`${url}/joinus`, {
                 method: "POST",
@@ -94,12 +113,7 @@ const JoinUs = () => {
                 },
                 body: JSON.stringify(values),
               }).then(
-                toast.info(
-                  `Hi, ${values.name}. Please wait. It make take time upto 1-mint`,
-                  {
-                    position: toast.POSITION.TOP_CENTER,
-                  }
-                )
+                waitingAlert
               );
 
               const response = await makeRequest.json();
@@ -107,6 +121,7 @@ const JoinUs = () => {
 
               if (response.message) {
                 Swal.fire("Hurry !", response.message, "success");
+                navigate("/");
               } else {
                 if (response.error.message) {
                   Swal.fire("Sorry !", response.error.message, "error");

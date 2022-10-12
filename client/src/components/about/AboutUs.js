@@ -18,16 +18,16 @@ const AboutUs = () => {
           </div>
           <div className="aboutus-canvas-about-heading-text">
             <p>
-              BirdsHeartBeat is a <b>Non-Profit Organzation </b>.
+              BirdsHeartBeat is a <b>Non-Profit Organzation</b>.
             </p>
             <p>
-              As we Humans are Developing ourSelf and the environment near by
+              As we Humans are Developing ourself and the environment near by
               us. Day by day new ideas comes to many people mind's and all of
               them want to became them True, for that New Technology and New
               Concepts are implementing in our srounding.
             </p>
             <p>
-              We Humans has been achived So many achivements in Science, But
+              We Humans has been achieved So many achievements in Science, But
               after that also we Humans are unable to Understood Nature.
             </p>
           </div>

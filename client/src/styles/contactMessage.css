@@ -18,6 +18,8 @@
     flex: 1;
     flex-wrap: wrap;
     padding: 30px 10px;
+    gap: 20px;
+    background-image: linear-gradient(31deg , black, #80808045);
 }
 
 .contact-message-bottom-card{
@@ -25,6 +27,8 @@
     flex-shrink: 1;
     flex-basis: 450px;
     height: fit-content;
+    background-color: #f7f7f7;
+    border-radius: 7px;
 }
 .under-contact-message-card{
     display: flex;
@@ -32,6 +36,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    padding: 10px 10px;
 }
 .contact-message-card-left{
     width: 69%;
@@ -46,20 +51,24 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 10px 0px;
+    
 }
 .contact-message-card-left-field{
     display: flex;
     flex-direction: row;
     justify-content: left;
+    align-items: center;
     gap: 10px;
     font-size: 1.3rem;
     color: gray;
     font-weight: 500;
+    color: black;
+
 
 }
 .contact-message-card-client-msg-sec{
     height: 175px;
+    color: #706f6f;
 }
 .contact-message-left-attend-sec{
     background-color: blue;
@@ -85,6 +94,8 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background-color: white;
+    border-color: #a9a9a9;
 }
 .contact-message-right-line-first{
     border: 2px solid;
@@ -109,4 +120,38 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.contact-message-graph{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.message-failed-stt{
+        color: white;
+        background-color: red;
+        font-size: 1.3rem;
+        font-weight: 500;
+        border-color: lightgray;
+}
+
+
+.message-success-stt{
+    color: white;
+    background-color: green;
+    font-size: 1.3rem;
+    font-weight: 500;
+    border-color: lightgray;
+}
+.message-under-progress-stt{
+        font-weight: 400;
+        border-color: lightgray;
+        background-color: white;
+        color: grey;
+        font-size: 1.1rem;
+}
+.contact-message-card-empty-btn{
+    width: 100%;
+    height: 20px;
 }

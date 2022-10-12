@@ -2,7 +2,7 @@ const router = require("../Rootroutes");
 const Support_Col = require("../../DataBase/collections/supportedCmp");
 
 
-router.get("" , async(request,response) =>{
+router.get("/supported/org" , async(request,response) =>{
  
     try {
         

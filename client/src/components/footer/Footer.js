@@ -61,7 +61,7 @@ const Footer = () => {
                 
                 <a  href={CUH_LOC} target="_self" >
                 <div className="footer-middle-basic-text">
-                  <SiGooglemaps /> <span className="footer-basic-detail-text">CUH, Mahendergarh, Haryana, India. </span>
+                  <SiGooglemaps /> <span className="footer-basic-detail-text">Central University of Haryana </span>
                 </div>
                 </a>
 

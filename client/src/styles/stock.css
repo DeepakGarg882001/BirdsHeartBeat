@@ -1,0 +1,57 @@
+
+.stock-canvas{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 86vh;
+}
+
+.stock-create-btn-sec{
+    display: flex;
+    position: absolute;
+    top: 90vh;
+    left: 94vw;
+    padding: 9px;
+    color: white;
+    font-size: 1.89rem;
+    background-image:linear-gradient(145deg, #16101a , #614f6a,#16101a);
+    box-shadow: 0px 0px 1px black;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.stock-canvas-body{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.stock-canvas-body-item{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    box-shadow: 0px 0px 1px gray;
+}
+
+.stock-item-top{
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+}
+.stock-item-top-user{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../../styles/postWorkForm.css";
 
-import { Form, Formik } from "formik";
 import Swal from "sweetalert2";
 
 import { useNavigate } from "react-router-dom";

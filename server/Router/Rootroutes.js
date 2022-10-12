@@ -81,3 +81,18 @@ require("./changeGrouplink/changeLink");
 
 // ==== Add New Memory ==== //
 require("./newMemory/createMemory");
+require("./newMemory/getAllMemories");
+
+
+//  ======== STOCK ===== //
+require("./stock/acceptItem");
+require("./stock/acceptStock");
+require("./stock/createStock");
+require("./stock/distributeStock");
+require("./stock/getStock");
+require("./stock/showItem");
+require("./stock/showStock");
+
+
+
+

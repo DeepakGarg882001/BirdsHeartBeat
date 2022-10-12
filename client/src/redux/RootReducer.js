@@ -17,6 +17,9 @@ import ContactUsMessages_Reducer from "./reducers/ContactUsMessages_Reducer";
 import UniqueMemberData_Reducer from "./reducers/UniqueMemberData_Reducer";
 import ShowAllAdmins_Reducer from "./reducers/ShowAllAdmins_Reducer";
 import UniqueMemberWork_Reducer from "./reducers/UniqueMemberWork_Reducer";
+import Stock_Reducer from "./reducers/Stock_Reducer";
+import SupportedMemories_Reducer from "./reducers/SupportedMemories_Reducer";
+import NewMemories_Reducer from "./reducers/NewMemories_Reducer";
 
 const RootReducer = combineReducers({
 
@@ -37,6 +40,9 @@ const RootReducer = combineReducers({
     UniqueMemberData_Reducer,
     ShowAllAdmins_Reducer,
     UniqueMemberWork_Reducer,
+    Stock_Reducer,
+    SupportedMemories_Reducer,
+    NewMemories_Reducer,
     
 });
 

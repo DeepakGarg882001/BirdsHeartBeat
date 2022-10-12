@@ -10,12 +10,13 @@ import Get_ContactUsMessages from "../../redux/actions/ContactUsMessages_Action"
 
 import { GrUserManager, GrMailOption } from "react-icons/gr";
 import { IoCallOutline } from "react-icons/io5";
+import {AiOutlineUser} from "react-icons/ai";
 
 const DisplayContactUsMessages = () => {
   const currentAdmin = useSelector((state) => state.CurrentUserReducer);
   const data = useSelector((state) => state.ContactUsMessages_Reducer);
   const url = process.env.REACT_APP_SERVER_URL;
-  let userRole = currentAdmin ? currentAdmin.userRole : [];
+  let userRole = currentAdmin.length!=0 ? currentAdmin.userRole : [];
   console.log(userRole)
   const dispatch = useDispatch();
 
@@ -97,17 +98,17 @@ const DisplayContactUsMessages = () => {
                         </div>
                       ) : (
                         <div className="contact-meassge-crr-status">
-                          <p>user</p>
+                          <AiOutlineUser style={{fontSize: "1.5rem"}}/>
                           <p> Attending</p>
                         </div>
                       )}
                       {data.progress != "none" ? (
-                        <div>
+                        <div className="contact-message-graph">
                           <div
                             style={{
                               borderColor:
                                 data.progress === "attending"
-                                  ? "#00f2ff"
+                                  ? "#649f1f"
                                   : "forestgreen",
                             }}
                             className="contact-message-right-line-first"
@@ -118,28 +119,27 @@ const DisplayContactUsMessages = () => {
                                 data.progress === "failed" ||
                                 data.progress === "completed"
                                   ? "forestgreen"
-                                  : "gray",
+                                  : "#d5d3d3",
                             }}
                             className="contact-message-right-line-second"
                           ></div>
                           {data.progress === "attending" ? (
-                            <div>
+                            <div className="contact-message-crr-response message-under-progress-stt" >
                               <p>Under progress</p>
                             </div>
                           ) : (
                             <div>
                               {data.progress === "failed" ? (
-                                <div>
+                                <div className="contact-message-crr-response message-failed-stt">
                                   <p>Failed</p>
                                 </div>
                               ) : (
-                                <div>
-                                  <p>Completed</p>
+                                <div className="contact-message-crr-response message-success-stt">
+                                  <p>Success</p>
                                 </div>
                               )}
                             </div>
                           )}
-                          <div className="contact-message-crr-response"></div>
                         </div>
                       ) : null}
                     </div>

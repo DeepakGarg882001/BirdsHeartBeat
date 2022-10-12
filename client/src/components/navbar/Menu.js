@@ -19,7 +19,7 @@ import { VscUnverified } from "react-icons/vsc";
 import { RiShieldUserLine } from "react-icons/ri";
 import { GiBackup } from "react-icons/gi";
 import { GoCommentDiscussion } from "react-icons/go";
-import { AiOutlinePicture } from "react-icons/ai";
+import { AiOutlinePicture,AiOutlineStock } from "react-icons/ai";
 
 import { useDispatch } from "react-redux";
 import { LogOut_User } from "../../redux/actions/currentUserAction";
@@ -248,7 +248,7 @@ const Menu = ({ setActivePanel }) => {
                 onClick={() => setActivePanel("none")}
               >
                 <li className="menu-list-option">
-                  <MdOutlineLogin /> Stock{" "}
+                  <AiOutlineStock /> Stock{" "}
                 </li>
               </Link>
           </ul>

@@ -51,6 +51,15 @@ export const Set_UniqueMember_Work ="Set_UniqueMember_Work";
 export const Get_All_Admins ="Get_All_Admins";
 export const Set_All_Admins ="Set_All_Admins";
 
+export const Get_Stock_Data ="Get_Stock_Data";
+export const Set_Stock_Data ="Set_Stock_Data";
+
+export const Get_New_Memories ="Get_New_Memories";
+export const Set_New_Memories ="Set_New_Memories";
+
+export const Get_Supported_Memories ="Get_Supported_Memories";
+export const Set_Supported_Memories ="Set_Supported_Memories";
+
 
 
 

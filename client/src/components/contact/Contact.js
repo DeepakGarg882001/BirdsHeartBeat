@@ -156,7 +156,7 @@ const Contact = () => {
             <a href={CUH_LOC} target="_self">
               <div>
                 <h2 className="contact-middle-title-style"> Address </h2>
-                <p> Central University of Haryana </p>
+                <p> Sec. 82, Gurgoan ,near DLF Ultima society </p>
               </div>
             </a>
           </div>

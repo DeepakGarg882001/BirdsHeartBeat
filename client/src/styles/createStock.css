@@ -1,0 +1,80 @@
+
+.create-stock-canvas{
+    min-height: 86vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+}
+.create-stock-top{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.create-stock-top-search-bar{
+    width: 400px;
+    font-size: 1.2rem;
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+    background-color: antiquewhite;
+    color: black;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+.create-stock-top-admin-list{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-height: 500px;
+    overflow: auto;
+    white-space: nowrap;
+    width: 500px;
+}
+.create-stock-list-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    border-bottom: 1px solid gray;
+}
+.create-stock-list-user-img{
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+.create-stock-list-user-img-size{
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+.create-stock-middle{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    width: fit-content;
+    height: fit-content;
+}
+.create-stock-user-sec{
+    width: 300px;
+    height: 354px;
+}
+.create-stock-middle-icon{
+    font-size: 3rem;
+}

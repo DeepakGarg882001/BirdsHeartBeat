@@ -1,12 +1,15 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import "../../styles/stockUser.css"
+import userAvatar from "../../images/user.png";
 
-import userAvtar from "../../images/user.png";
-
-const User = ({ id }) => {
+const User = ({ userID }) => {
+  let id = userID;
   const url = process.env.REACT_APP_SERVER_URL;
 
-  let user;
+  const [user,setUser]=useState('');
   const getUser = async () => {
+    
+    if(id){
     const makeRequest = await fetch(`${url}/unique/member?key=${id}`, {
       method: "GET",
       headers: {
@@ -17,23 +20,28 @@ const User = ({ id }) => {
     });
 
     const response = await makeRequest.json();
-
-    user = response.data;
+    console.log(response);
+    setUser(response.data);
+  }
+  
   };
+  console.log(id);
+  console.log(user);
 
   useEffect(() => {
-    getUser;
+     getUser();
   }, []);
 
   return (
     <>
-      <div>
-        <div>
+      <div className="stock-user-canvas">
+        <div className="stock-user-profile">
           <img
-            src={user.length != 0 ? `${url}/{user.image.filePath}` : userAvtar}
+            className="stock-user-profile-img"
+            src={user ? `${url}/${user.image.filePath}` : userAvatar}
           />
         </div>
-        <p>{user.name}</p>
+        <p className="stock-user-name">{user ? user.name : ""}</p>
       </div>
     </>
   );

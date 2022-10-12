@@ -4,9 +4,10 @@ import "../../styles/home.css";
 import { useDispatch } from 'react-redux';
 import DonationGainAction from '../../redux/actions/donationGainAction';
 
-import Organisations from './Organisations';
+import Organizations from './Organizations';
 import NewPics from './NewPics';
-
+import SupportedMemories from '../../redux/actions/SupportedMemories_Action';
+import GetNewMemories from '../../redux/actions/NewMemories_Action';
 import { motion} from "framer-motion";
 
 const Home = () => {
@@ -17,6 +18,8 @@ const Home = () => {
   
   useEffect(()=>{
            dispatch(DonationGainAction(url));
+           dispatch(GetNewMemories());
+           dispatch(SupportedMemories());
    },[]);
  
 
@@ -24,15 +27,15 @@ const Home = () => {
     <>
         <div className='home-canvas'>
               
-              <div className='home-canvas-new-pic-sec'>
+              {/* <div className='home-canvas-new-pic-sec'>
                 <NewPics />
               </div>
 
 
              
              <div className='home-canvas-org-sec'>
-               <Organisations />
-             </div>
+               <Organizations />
+             </div> */}
 
         </div>
     </>

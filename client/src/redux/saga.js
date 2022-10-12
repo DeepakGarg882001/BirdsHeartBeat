@@ -46,6 +46,15 @@ import {
   Get_UniqueMember_Work,
   Set_UniqueMember_Work,
 
+  Get_Stock_Data,
+  Set_Stock_Data,
+
+  Get_New_Memories,
+  Set_New_Memories,
+
+  Get_Supported_Memories,
+  Set_Supported_Memories,
+
 } from "./reduxConstants";
 
 const url = process.env.REACT_APP_SERVER_URL;
@@ -479,6 +488,9 @@ function* getUniqueMemberWork(action) {
  
 
 
+
+
+
 // Call API and Get List of all Admins !
   function* getAllAdminUsersData(action) {
     const makeRequest = yield fetch(`${url}/users/members/show/admin?key=${action.query}`, {
@@ -503,7 +515,98 @@ function* getUniqueMemberWork(action) {
    }
    
  
-   
+
+
+  
+
+ 
+
+// Call API and Get all Data of Stock !
+function* getStockData() {
+  const makeRequest = yield fetch(`${url}/admin/stock`, {
+    method: "GET",
+    headers: {
+      Accept:"application/json",
+    "Content-Type": "application/json",
+  },
+  credentials:"include",
+  });
+  const response = yield makeRequest.json();
+  let data ;
+
+  if(response.data){
+    data = response.data;
+  }
+  if(response.error){
+    data = response;
+  }
+  yield put({ type: Set_Stock_Data, data: data });
+ 
+ }
+ 
+
+
+
+
+  
+
+ 
+
+// Call API and Get all New Memories !
+function* getNewMemories() {
+  const makeRequest = yield fetch(`${url}/home/memories`, {
+    method: "GET",
+    headers: {
+      Accept:"application/json",
+    "Content-Type": "application/json",
+  },
+  credentials:"include",
+  });
+  const response = yield makeRequest.json();
+  let data ;
+
+  if(response.data){
+    data = response.data;
+  }
+  if(response.error){
+    data = response;
+  }
+  yield put({ type: Set_New_Memories, data: data });
+ 
+ }
+ 
+
+
+  
+
+ 
+
+// Call API and Get all Supported Memories !
+function* getSupportedMemories() {
+  const makeRequest = yield fetch(`${url}/supported/org`, {
+    method: "GET",
+    headers: {
+      Accept:"application/json",
+    "Content-Type": "application/json",
+  },
+  credentials:"include",
+  });
+  const response = yield makeRequest.json();
+  let data ;
+
+  if(response.data){
+    data = response.data;
+  }
+  if(response.error){
+    data = response;
+  }
+  yield put({ type: Set_Supported_Memories, data: data });
+ 
+ }
+ 
+
+
+
 
 
 // Main Function Starts from here.
@@ -541,9 +644,11 @@ function* Saga() {
   
   yield takeEvery(Get_UniqueMember_Work, getUniqueMemberWork);
 
+  yield takeEvery(Get_Stock_Data, getStockData);
 
- 
-  
+  yield takeEvery(Get_New_Memories, getNewMemories);
+
+  yield takeEvery(Get_Supported_Memories, getSupportedMemories);
 
 
 

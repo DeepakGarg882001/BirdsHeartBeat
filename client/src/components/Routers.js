@@ -45,6 +45,8 @@ import NewMemoryAdd from './newMemory/NewMemoryAdd';
 import DashBoard from './dashboard/DashBoard';
 
 import ShowStock from './stock/ShowStock';
+import AddItemToStock from './stock/AddItemToStock';
+
 
 import {AnimatePresence } from "framer-motion"
 
@@ -100,6 +102,7 @@ const Routers = () => {
        <Route path="/dashboard" element={<DashBoard />}  />
 
        <Route path="/stock" element={<ShowStock />}  />
+       <Route path="/stock/create" element={<AddItemToStock />}  />
 
 
 
